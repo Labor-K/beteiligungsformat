@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="  https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src='okzoom.min.js'></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,300;1,700&family=IBM+Plex+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,600&display=swap" rel="stylesheet">
+    <title>Beteiligungsformat</title>
+  </head>
+  <body>
+    <style type="text/css">
+      .panel.bordeaux {
+        margin-bottom: 400px;
+        background-color: orange;
+      }
+      .panel.blue {
+        background-color: green;
+      }
+
+      b {
+font-weight: 700;      }
+
+      /* _________________________ */
+      body {
+        font-family: "IBM Plex Sans", sans-serif;
+        height: 100%;
+      }
+
+      h1 {
+        text-align: left;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      h2 {
+        font-family: "IBM Plex Mono", monospace !important;
+        width: 200px;
+        font-size: 18px;
+      }
+
+      h3 {
+        font-family: "IBM Plex Sans", sans-serif;
+        width: 400px;
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 24px;
+      }
+
+      /* ________PANELS______________ */
+
+      .panel {
+        height: 100vh;
+        width: 100%;
+        display: block;
+        position: relative;
+      }
+
+      .panel.intro {
+        background-color: white;
+      }
+      .panel.second {
+        margin-bottom: 400px;
+        background-color: white;
+      }
+
+      .panel.third {
+        background-color: white;
+      }
+      /* ________IDS______________ */
+
+      #container {
+        margin-left: 5%;
+        position: relative;
+      }
+
+      #bodytext {
+        font-size: 18px !important;
+        width: 60vw;
+      }
+
+      .fullscreen-bg {
+        /* position: fixed; */
+        top: 1%;
+        right: 1%;
+        bottom: 1%;
+        left: 1%;
+        overflow: hidden;
+        z-index: -100;
+      }
+
+      .fullscreen-bg__video {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 98%;
+      }
+
+      .active {
+        position: absolute !important;
+        display: none !important;
+      }
+
+      #logo {
+        vertical-align: top;
+        bottom: 300px;
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+      }
+
+      #explain {
+        position: relative;
+        bottom: 250px;
+        width: 245px;
+        padding-left: 80% !important;      
+}
+
+#final-explain{
+        vertical-align: top;
+        bottom: 300px;
+        margin: auto;
+        width: 25%;
+        padding: 10px;
+}
+      /* ________PINS AND TRIGGERS______________ */
+
+      #trigger1 {
+        z-index: 999999;
+      }
+
+      #pin1 {
+        margin-left: 75vw;
+        vertical-align: top;
+      }
+
+      #trigger2 {
+      }
+
+      #pin2 {
+        vertical-align: top;
+        bottom: 300px;
+        margin-left: 5%;
+        width: 50%;
+      }
+
+      #trigger3 {
+        vertical-align: top;
+      }
+
+      #pin3 {
+        vertical-align: top;
+        bottom: 300px;
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+      }
+      #pin4 {
+        vertical-align: top;
+        bottom: 300px;
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+      }
+
+      #pin5 {
+        vertical-align: top;
+        bottom: 300px;
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+      }
+
+      #pin6 {
+        vertical-align: top;
+        bottom: 300px;
+        margin: auto;
+        width: 100vw;
+      }
+
+
+      /* ________Horizontal articles______________ */
+
+      body,
+html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+} 
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.article {
+  height: 100%;
+  width: calc(100% / 5);
+  float: left;
+  position: relative;
+  display: flex;
+ 
+}
+
+.articles {
+  width: 500%;
+  height: 100%;
+}
+.articleTitle {
+  font-size: 15px;
+  color: black;
+  z-index: 99999999;
+  position: absolute;
+  margin-left: 5%;
+  margin-top: 10px;
+  width: 200px;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("/logo_deu.jpg");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#beteiligung{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+    </style>
+    <div>
+      <script>
+        // init controller
+        var controller = new ScrollMagic.Controller();
+      </script>
+
+      <section class="panel intro">
+        <div id="container">
+          <h1>Intro: Eine neue visuelle Identität für das ISR</h1>
+          <div id="bodytext">
+            <p>
+              <em>»von der abstrakten Literatur über die intellektuelle Diskussion und die […] Massenkommunikationsmittel bis ins öffentliche und schließlich auch ins handelnde Bewußtsein«</em></br></br>
+              Mit diesen Worten beschrieb Rainer Mackensen, Professor für Soziologie an der TU Berlin, 1970 die Bandbreite einer »integrierenden Planung«. Für deren Umsetzung plädierte er für die Gründung eines Instituts für Stadt- und Regionalplanung, die im Mai 1972 beschlossen wurde. Offiziell besteht das <b>Institut für Stadt- und Regionalplanung (ISR)</b> seit dem 1. April 1974.</br></br>
+              Ein halbes Jahrhundert nach diesen Gründungsbestrebungen bekräftigt das ISR seinen Anspruch, sich nicht nur intern zu vernetzen, sondern auch nach außen zu wirken. Zu diesem Zweck hat das LABOR K eine neue <b>visuelle Identität</b> entwickelt, die wir Ihnen auf dieser Seite vorstellen möchten. Scrollen Sie durch die Bilderstrecke oder schauen Sie sich das <u>Video</u> an – und tragen Sie am Ende der Präsentation mit Ihrem Feedback zur finalen Ausarbeitung bei.
+            </p>
+          </div>
+        </div>
+      </section>
+      <div id="trigger1"></div>
+      <div id="pin1">
+        <h2>
+          Scrollen Sie einfach weiter, um durch die Präsentation zu gehen. Diese Website ist für große Bildschirme konzipiert. Falls Sie einen kleinen Bildschirm nutzen, empfehlen wir die <u>Video-Präsentation</u>.
+        </h2>
+      </div>
+
+      <section class="panel second">
+        <div id="container">
+          <h1>Entwicklung eines visuellen Prinzips: Herleitung</h1>
+        </div>
+        <div id="vid" class="fullscreen-bg">
+          <video
+            loop
+            muted
+            autoplay
+            poster="herleitung.png"
+            class="fullscreen-bg__video"
+          >
+            <source src="herleitung.mp4" type="video/mp4" />
+            <!-- <source src="herleitung.webm" type="video/webm" />
+              <source src="herleitung.ogv" type="video/ogg" /> -->
+          </video>
+        </div>
+      </section>
+
+      <div id="trigger2"></div>
+        <div id="pin2">
+          <h3>Wie kann man die Planung von Stadt und Region <em>abstrakt</em> repräsentieren?</h3>
+      </div>
+
+      <section class="panel third">
+        <div id="container">
+          <h1>Entwicklung eines visuellen Prinzips: Konzeption</h1>
+        </div>
+      </section>
+      <div id="trigger3"></div>
+      <div id="pin3">
+        <div id="logo">
+          <img src="1.png" alt="Konzept" width="auto" height="250px" />
+        </div>
+        <div id="explain"> Der Name »Institut für Stadt- und Regionalplanung« vereint die Praxis verschiedener (Planungs-)Maßstäbe sowie zwei Elemente (die <em>Stadt</em> und die <em>Region),</em> die sich gegenseitig bedingen. Das visuelle Prinzip des Logos muss also beide Elemente und ihre Maßstäblichkeit kommunizieren können.  </div>
+
+      </div>
+
+      <div id="trigger4"></div>
+      <div id="pin4">
+        <div id="logo">
+          <img src="2.png" alt="Konzept" width="auto" height="250px" />
+        </div>
+        <div id="explain"> Die urbanen und regionalen Landschaften können durch abstrahierte Muster abgebildet werden. Diese Muster werden durch einen Algorithmus so programmiert, dass sie aussehen, als wären sie Momentaufnahmen einer kontinuierlichen Planung. Das Muster der Stadt (in der Mitte) ist dabei größer als das Muster der Region (außen). In dieser Form bildet das visuelle Prinzip beide Planungsmaßstäbe ab.  </div>
+      </div>
+
+      <div id="trigger5"></div>
+      <div id="pin5">
+        <div id="logo">
+          <img src="3.png" alt="Konzept" width="auto" height="250px" />
+        </div>
+        <div id="explain"> Um das Logo zusammen mit der Wortmarke (»Institut für Stadt- und Regionalplanung« bzw. »ISR«) benutzen und anordnen zu können, bietet sich eine quadratische Form an. Diese ikonische Form (ein Quadrat im Quadrat) kann auch als allgemeines Prinzip in der visuellen Sprache benutzt werden.  </div>
+      </div>
+
+      <div id="trigger6"></div>
+      <div id="pin6">
+        <div id="logo">
+          <img id ="zooms" src="gross.jpg" alt="Girl in a jacket" width="100%"/>
+        </div>
+        <div id="final-explain"> Das oben dargestellte Prinzip erlaubt die Generierung unendlich vieler Logos. Diese Repräsentation wird der Realität gerecht, in der sich jede Stadt und Region unterschiedlich darstellt und spiegelt darüberhinaus den prozesshaften Charakter der Disziplin wider. </div>
+      </div>
+
+      <div class="wrapper" id="js-wrapper">
+        <div class="articles" id="js-slideContainer">
+          <article class="article">
+            <span class="articleTitle" id="title1"><b>Logowelten:</b></br> Logos müssen heute in mannigfachen Umgebungen funktionieren. Konzipiert wurden verschiedene Aggregatzustände (von oben nach unten):</br> <b>1)</b> Signet (z.B. für Favicons in der Browserleiste)</br> <b>2)</b> Signet mit Kürzel </br><b>3)</b> Signet mit ausgeschriebenen Namen </br><b>4)</b> Wortmarke mit eingearbeiteten Signets</span>
+            <img src="a.jpg" alt="Konzept" width="auto" height="100%" />
+          </article>
+
+            <article class="article">
+              <span class="articleTitle" id="title2"><b>Englische Logo-Variante</b></br> sowie Farbvarianten</span>
+              <img src="english.jpg" alt="Konzept" width="auto" height="100%" />
+            </article>
+
+
+          <article class="article">
+            <span class="articleTitle" id="title3"><b>Anwendungsbeispiele</b></br> Visitenkarten und erste Entwürfe von Buchcovern</span>
+            <img src="c.jpg" alt="Konzept" width="auto" height="100%" />
+          </article>
+
+
+          <article class="article">
+            <span class="articleTitle" id="title4"><b>Bewegte Logo-Variante</b></br> Oben: normale Geschwindigkeit, unten: Abspielung bei doppelter Geschwindigkeit verdeutlicht, wie der Algorithmus die Muster generiert</span>
+            <div id="vid" class="fullscreen-bg">
+              <video
+                loop
+                muted
+                autoplay
+                poster="herleitung.png"
+                class="fullscreen-bg__video"
+              >
+                <source src="./logo-bewegt.mp4" type="video/mp4" />
+              </video>
+            </div>          
+          </article>
+
+          <article class="article">
+            <span class="articleTitle" id="title5"><b>Weitere Anwendungsbeispiele</b></br> Urkunden </span>
+            <img src="d.jpg" alt="Konzept" width="auto" height="100%" />
+
+          </article>
+
+        </div>
+      </div>
+
+
+
+      <section class="panel intro">
+        <div id="container">
+          <h1>Beteiligungsformat</h1>
+          <div id="beteiligung">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdmSy4P8IGfcBN9Ce65-8qyYxAgn3oF0iPip-q_kLjJkE4EWg/viewform?embedded=true" width="640" height="633" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
+        </div>
+      </section>
+    <script>
+
+
+$(function(){
+      $('#zooms').okzoom({
+        scaleWidth: 2500,
+        backgroundRepeat: "no-repeat",
+        width: 200,
+        height: 200
+      });
+    });
+
+TweenLite.defaultEase = Linear.easeNone;
+var titles = document.querySelectorAll(".articleTitle");
+var controllerb = new ScrollMagic.Controller();
+var tl = new TimelineMax();
+
+// create timeline
+// this could also be created in a loop
+tl.to("#js-slideContainer", 1, {xPercent: -20}, "label1");
+tl.from(titles[1], 0.5, {opacity:0}, "label1+=0.5");
+tl.to("#js-slideContainer", 1, {xPercent: -40}, "label2");
+tl.from(titles[2], 0.5, {opacity:0}, "label2+=0.5");
+tl.to("#js-slideContainer", 1, {xPercent: -60}, "label3");
+tl.from(titles[3], 0.5, {opacity:0}, "label3+=0.5");
+tl.to("#js-slideContainer", 1, {xPercent: -80}, "label4");
+tl.from(titles[4], 0.5, {opacity:0}, "label4+=0.5");
+
+
+new ScrollMagic.Scene({
+  triggerElement: "#js-wrapper",
+  triggerHook: "onLeave",
+  duration: "400%"
+})
+  .setPin("#js-wrapper")
+  .setTween(tl)
+  .addIndicators({
+    colorTrigger: "white",
+    colorStart: "white",
+    colorEnd: "white",
+  })
+  .addTo(controllerb);
+
+
+      $(function () {
+        // wait for document ready
+        // init
+        var controller = new ScrollMagic.Controller({
+          globalSceneOptions: {
+            triggerHook: "onLeave",
+            duration: "400%", // this works just fine with duration 0 as well
+            // However with large numbers (>20) of pinned sections display errors can occur so every section should be unpinned once it's covered by the next section.
+            // Normally 100% would work for this, but here 200% is used, as Panel 3 is shown for more than 100% of scrollheight due to the pause.
+          },
+        });
+
+        // get all slides
+        var slides = document.querySelectorAll("section.panel");
+
+        // create scene for every slide
+        for (var i = 0; i < slides.length; i++) {
+          new ScrollMagic.Scene({
+            triggerElement: slides[i],
+          })
+            .setPin(slides[i], { pushFollowers: false })
+            .addTo(controller);
+        }
+      });
+
+      // CHANGE CLASS ON SCROLL
+      /*       new ScrollMagic.Scene({triggerElement: ".third"})
+					.setClassToggle("#vid", "active") // add class toggle
+					.addIndicators() // add indicators (requires plugin)
+					.addTo(controller); */
+
+      //STICKY ELEMENT
+
+      $(function () {
+        // wait for document ready
+        // build scene
+        var scene = new ScrollMagic.Scene({
+          triggerElement: "#trigger1",
+          duration: 500,
+        })
+          .setPin("#pin1")
+          .addTo(controller);
+      });
+
+      $(function () {
+        // wait for document ready
+        // build scene
+        var scene = new ScrollMagic.Scene({
+          triggerElement: "#trigger2",
+          duration: 1000,
+        })
+          .setPin("#pin2")
+          .addTo(controller);
+      });
+
+      $(function () {
+        // wait for document ready
+        // build scene
+        var scene = new ScrollMagic.Scene({
+          triggerElement: "#trigger3",
+          duration: 500,
+        })
+          .setPin("#pin3")
+          .addTo(controller);
+      });
+
+      $(function () {
+        // wait for document ready
+        // build scene
+        var scene = new ScrollMagic.Scene({
+          triggerElement: "#trigger4",
+          duration: 500,
+        })
+          .setPin("#pin4")
+          .addTo(controller);
+      });
+
+      $(function () {
+        // wait for document ready
+        // build scene
+        var scene = new ScrollMagic.Scene({
+          triggerElement: "#trigger5",
+          duration: 500,
+        })
+          .setPin("#pin5")
+          .addTo(controller);
+      });
+
+      $(function () {
+        // wait for document ready
+        // build scene
+        var scene = new ScrollMagic.Scene({
+          triggerElement: "#trigger6",
+          duration: 500,
+        })
+          .setPin("#pin6")
+          .addTo(controller);
+      });
+
+
+
+    </script>
+
+
+
+  </body>
+</html>
