@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visuelle Sprache für ISR - Videoformat</title>
+</head>
+<body>
+    <style type="text/css">
+        .panel.bordeaux {
+          margin-bottom: 400px;
+          background-color: orange;
+        }
+        .panel.blue {
+          background-color: green;
+        }
+  
+        b {
+  font-weight: 700;      }
+  
+        /* _________________________ */
+        body {
+          font-family: "IBM Plex Sans", sans-serif;
+          height: 100%;
+        }
+  
+        h1 {
+          text-align: left;
+          font-size: 15px;
+          font-weight: 600;
+        }
+  
+        h2 {
+          font-family: "IBM Plex Mono", monospace !important;
+          width: 200px;
+          font-size: 18px;
+        }
+  
+        h3 {
+          font-family: "IBM Plex Sans", sans-serif;
+          width: 400px;
+          font-size: 32px;
+        }
+  
+        p {
+          font-size: 24px;
+        }
+  
+        /* ________PANELS______________ */
+  
+        .panel {
+          height: 100vh;
+          width: 100%;
+          display: block;
+          position: relative;
+        }
+  
+        .panel.intro {
+          background-color: white;
+        }
+        .panel.second {
+          margin-bottom: 400px;
+          background-color: white;
+        }
+  
+        .panel.third {
+          background-color: white;
+        }
+        /* ________IDS______________ */
+  
+        #container {
+          margin-left: 5%;
+          position: relative;
+        }
+  
+        #bodytext {
+          font-size: 18px !important;
+          width: 60vw;
+        }
+  
+        .fullscreen-bg {
+          /* position: fixed; */
+          top: 1%;
+          right: 1%;
+          bottom: 1%;
+          left: 1%;
+          overflow: hidden;
+          z-index: -100;
+        }
+  
+        .fullscreen-bg__video {
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 98%;
+        }
+  
+        .active {
+          position: absolute !important;
+          display: none !important;
+        }
+  
+        #logo {
+          vertical-align: top;
+          bottom: 300px;
+          margin: auto;
+          width: 50%;
+          padding: 10px;
+        }
+  
+        #explain {
+          position: relative;
+          bottom: 250px;
+          width: 250px;
+          padding-left: 80% !important;      
+  }
+  
+  #final-explain{
+          vertical-align: top;
+          bottom: 300px;
+          margin: auto;
+          width: 25%;
+          padding: 10px;
+  }
+        /* ________PINS AND TRIGGERS______________ */
+  
+        #trigger1 {
+          z-index: 999999;
+        }
+  
+        #pin1 {
+          margin-left: 75vw;
+          vertical-align: top;
+        }
+  
+  
+  
+        #pin2 {
+          vertical-align: top;
+          bottom: 300px;
+          margin-left: 5%;
+          width: 50%;
+        }
+  
+        #trigger3 {
+          vertical-align: top;
+        }
+  
+        #pin3 {
+          vertical-align: top;
+          bottom: 300px;
+          margin: auto;
+          width: 50%;
+          padding: 10px;
+        }
+        #pin4 {
+          vertical-align: top;
+          bottom: 300px;
+          margin: auto;
+          width: 50%;
+          padding: 10px;
+        }
+  
+        #pin5 {
+          vertical-align: top;
+          bottom: 300px;
+          margin: auto;
+          width: 50%;
+          padding: 10px;
+        }
+  
+        #pin6 {
+          vertical-align: top;
+          bottom: 300px;
+          margin: auto;
+          width: 100vw;
+        }
+  
+  
+        /* ________Horizontal articles______________ */
+  
+        body,
+  html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  } 
+  
+  .wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .article {
+    height: 100%;
+    width: calc(100% / 5);
+    float: left;
+    position: relative;
+    display: flex;
+   
+  }
+  
+  .articles {
+    width: 500%;
+    height: 100%;
+  }
+  .articleTitle {
+    font-size: 15px;
+    color: black;
+    z-index: 99999999;
+    position: absolute;
+    margin-left: 5%;
+    margin-top: 10px;
+    width: 200px;
+  }
+  
+  .bg {
+    /* The image used */
+    background-image: url("/logo_deu.jpg");
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  #beteiligung{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+  #videocont{
+      padding: 5%;
+  }
+      </style>
+<div id ="videocont">
+    <h1>Video-Präsentation</h1>
+
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/481182965?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+</div>
+    <div id="container">
+        <h1>Beteiligungsformat</h1>
+        <div id="beteiligung">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdmSy4P8IGfcBN9Ce65-8qyYxAgn3oF0iPip-q_kLjJkE4EWg/viewform?embedded=true" width="640" height="633" frameborder="0" marginheight="0" marginwidth="0">Wird geladen…</iframe>
+      </div>
+
+
+
+</body>
+</html>
